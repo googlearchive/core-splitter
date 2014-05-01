@@ -1,0 +1,7 @@
+{
+  "name": "core-splitter",
+  "private": true,
+  "dependencies": {
+    "core-layout": "Polymer/core-layout#master"
+  }
+}
