@@ -2,6 +2,7 @@
   "name": "core-splitter",
   "private": true,
   "dependencies": {
-    "core-layout": "Polymer/core-layout#master"
-  }
+    "core-layout": "Polymer/core-layout#0.2.4"
+  },
+  "version": "0.2.4"
 }
