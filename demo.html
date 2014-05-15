@@ -9,7 +9,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 -->
 <html>
 <head>
-
   <title>core-splitter</title>
   
   <script src="../platform/platform.js"></script>
@@ -47,41 +46,41 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 </head>
 <body unresolved>
 
-  <core-layout class="container">
+  <div class="container" horizontal layout>
     <div id="box1">left</div>
     <core-splitter direction="left"></core-splitter>
-    <div core-flex>right</div>
-  </core-layout>
+    <div flex>right</div>
+  </div>
   
   <br>
   
-  <core-layout vertical class="container">
+  <div class="container" vertical layout>
     <div id="box2">top</div>
     <core-splitter direction="up"></core-splitter>
-    <div core-flex>bottom</div>
-  </core-layout>
+    <div flex>bottom</div>
+  </div>
   
   <br>
   
-  <core-layout class="container">
+  <div class="container" horizontal layout>
     <div id="box3">1</div>
     <core-splitter direction="left"></core-splitter>
-    <core-layout vertical core-flex>
+    <div flex vertical layout>
       <div id="box4">2</div>
       <core-splitter direction="up"></core-splitter>
-      <div core-flex>3</div>
-    </core-layout>
-  </core-layout>
+      <div flex>3</div>
+    </div>
+  </div>
   
   <br>
   
-  <core-layout class="container">
+  <div class="container" horizontal layout>
     <div id="box5">left</div>
     <core-splitter direction="left"></core-splitter>
-    <div core-flex>center</div>
+    <div flex>center</div>
     <core-splitter direction="right"></core-splitter>
     <div id="box6">right</div>
-  </core-layout>
+  </div>
   
 </body>
 </html>
