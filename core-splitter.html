@@ -43,7 +43,7 @@ Example:
 
 <link rel="import" href="../polymer/polymer.html">
 
-<polymer-element name="core-splitter" attributes="direction locked" on-trackstart="{{trackStart}}" on-track="{{track}}">
+<polymer-element name="core-splitter" attributes="direction locked minSize allowOverflow" on-trackstart="{{trackStart}}" on-track="{{track}}">
     
 <template>
 
@@ -62,6 +62,15 @@ Example:
      * @default 'left'
      */
     direction: 'left',
+
+    /**
+     * Minimum width to which the splitter target can be sized
+     *
+     * @attribute minSize
+     * @type number
+     * @default 0
+     */
+    minSize: 0,
     
     /**
      * Locks the split bar so it can't be dragged.
@@ -71,9 +80,27 @@ Example:
      * @default false
      */
     locked: false,
+
+    /**
+     * By default the parent and siblings of the splitter are set to overflow hidden. This helps
+     * avoid elements bleeding outside the splitter regions. Set this property to true to allow
+     * these elements to overflow.
+     *
+     * @attribute allowOverflow
+     * @type boolean
+     * @default false
+     */
+    allowOverflow: false,
     
     ready: function() {
       this.directionChanged();
+    },
+
+    domReady: function() {
+      if (!this.allowOverflow) {
+        this.parentNode.style.overflow = this.nextElementSibling.style.overflow =
+            this.previousElementSibling.style.overflow = 'hidden';
+      }
     },
     
     directionChanged: function() {
@@ -99,7 +126,7 @@ Example:
       }
       var d = e[this.horizontal ? 'dy' : 'dx'];
       this.target.style[this.dimension] = 
-          this.size + (this.isNext ? -d : d) + 'px';
+          Math.max(this.minSize, this.size + (this.isNext ? -d : d)) + 'px';
     }
     
   });

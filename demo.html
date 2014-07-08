@@ -13,6 +13,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   
   <script src="../platform/platform.js"></script>
   
+  <link rel="import" href="../core-toolbar/core-toolbar.html">
   <link rel="import" href="core-splitter.html">
   
   <style>
@@ -30,10 +31,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       border: 4px solid #aaa;
     }
     
-    .container div {
-      overflow: hidden;
-    }
-    
     #box1, #box3, #box5, #box6 {
       width: 100px;
     }
@@ -47,8 +44,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 </head>
 <body unresolved>
   <div class="container" horizontal layout>
-    <div id="box1">left</div>
-    <core-splitter direction="left"></core-splitter>
+    <core-toolbar>
+      Hello World!
+    </core-toolbar>
+    <core-splitter direction="left"  minSize="128"></core-splitter>
     <div flex>right</div>
   </div>
   
