@@ -114,6 +114,14 @@ Example:
       this.dimension = this.horizontal ? 'height' : 'width';
       this.classList.toggle('horizontal', this.horizontal);
     },
+
+    targetChanged: function(old) {
+      if (old) {
+        old.style[old.__splitterMinSize] = '';
+      }
+      var min = this.target.__splitterMinSize = this.horizontal ? 'minHeight' : 'minWidth';
+      this.target.style[min] = this.minSize + 'px';
+    },
     
     trackStart: function() {
       this.update();
@@ -126,7 +134,7 @@ Example:
       }
       var d = e[this.horizontal ? 'dy' : 'dx'];
       this.target.style[this.dimension] = 
-          Math.max(this.minSize, this.size + (this.isNext ? -d : d)) + 'px';
+          this.size + (this.isNext ? -d : d) + 'px';
     }
     
   });
