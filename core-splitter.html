@@ -45,7 +45,7 @@ Example:
 <link rel="import" href="../polymer/polymer.html">
 <link rel="import" href="../core-resizable/core-resizable.html">
 
-<polymer-element name="core-splitter" attributes="direction locked minSize allowOverflow"
+<polymer-element name="core-splitter" attributes="direction locked minSize maxSize allowOverflow"
     on-trackstart="{{trackStart}}" on-track="{{track}}" on-down="{{preventSelection}}">
 
 <template>
@@ -76,6 +76,15 @@ Example:
      */
     minSize: '',
 
+    /**
+     * Maximum width to which the splitter target can be sized
+     *
+     * @attribute maxSize
+     * @type number
+     * @default -1 (infinite)
+     */
+    maxSize: -1,
+      
     /**
      * Locks the split bar so it can't be dragged.
      *
@@ -135,7 +144,9 @@ Example:
         old.style[old.__splitterMinSize] = '';
       }
       var min = this.target.__splitterMinSize = this.horizontal ? 'minHeight' : 'minWidth';
+      var max = this.target.__splitterMaxSize = this.horizontal ? 'maxHeight' : 'maxWidth';
       this.target.style[min] = this.minSize;
+      this.target.style[max] = this.maxSize + 'px';
     },
 
     trackStart: function() {
