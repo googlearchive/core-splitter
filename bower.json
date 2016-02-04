@@ -1,8 +1,9 @@
 {
-  "name": "core-splitter",
+  "name": "iron-splitter",
   "private": true,
   "dependencies": {
     "polymer": "Polymer/polymer#master",
-    "core-resizable": "Polymer/core-resizable#master"
+    "iron-resizable-behavior": "PolymerElements/iron-resizable-behavior#master",
+    "iron-flex-layout": "PolymerElements/iron-flex-layout"
   }
 }

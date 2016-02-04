@@ -1,20 +1,19 @@
-<!doctype html>
-<!--
+<!DOCTYPE html><!--
 Copyright (c) 2014 The Polymer Project Authors. All rights reserved.
 This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
 The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
 The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
 Code distributed by Google as part of the polymer project is also
 subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
--->
-<html>
-<head>
-  <title>core-splitter</title>
+--><html><head>
+  <title>iron-splitter</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
   
-  <script src="../webcomponentsjs/webcomponents.js"></script>
   
-  <link rel="import" href="core-splitter.html">
+  <script src="../webcomponentsjs/webcomponents-lite.js"></script>
+  <!-- <link rel="import" href="../iron-flex-layout/iron-flex-layout.html"> -->
+
+  <link rel="import" href="iron-splitter.html">
   
   <style>
   
@@ -33,44 +32,63 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     
   </style>
   
+  <style is="custom-style">
+    /* TODO(polyup): For speed, consider reworking these styles with .classes
+                     and #ids rather than [attributes].
+    */
+    [layout] {
+      @apply(--layout);
+    }
+    [layout][horizontal] {
+      @apply(--layout-horizontal);
+    }
+    [layout][vertical] {
+      @apply(--layout-vertical);
+    }
+    [flex] {
+      @apply(--layout-flex);
+    }
+  </style>
+  <link rel="import" href="../iron-flex-layout/iron-flex-layout.html">
 </head>
-<body unresolved>
+<body unresolved="">
 
-  <div class="container" horizontal layout>
+  <div class="container" horizontal="" layout="">
     <div>left (min: 128px)</div>
-    <core-splitter direction="left" minSize="128px"></core-splitter>
-    <div flex>right</div>
+    <iron-splitter direction="left" minsize="128px"></iron-splitter>
+    <div flex="">right</div>
   </div>
   
   <br>
   
-  <div class="container" vertical layout>
+  <div class="container" vertical="" layout="">
     <div id="box2">top</div>
-    <core-splitter direction="up"></core-splitter>
-    <div flex>bottom</div>
+    <iron-splitter direction="up"></iron-splitter>
+    <div flex="">bottom</div>
   </div>
   
   <br>
   
-  <div class="container" horizontal layout>
+  <div class="container" horizontal="" layout="">
     <div id="box3">1</div>
-    <core-splitter direction="left"></core-splitter>
-    <div flex vertical layout>
+    <iron-splitter direction="left"></iron-splitter>
+    <div flex="" vertical="" layout="">
       <div id="box4">2</div>
-      <core-splitter direction="up"></core-splitter>
-      <div flex>3</div>
+      <iron-splitter direction="up"></iron-splitter>
+      <div flex="">3</div>
     </div>
   </div>
   
   <br>
   
-  <div class="container" horizontal layout>
+  <div class="container horizontal layout" horizontal="" layout="">
     <div id="box5">left</div>
-    <core-splitter direction="left"></core-splitter>
+    <iron-splitter direction="left"></iron-splitter>
     <div flex>center</div>
-    <core-splitter direction="right"></core-splitter>
+    <iron-splitter direction="right"></iron-splitter>
     <div id="box6">right</div>
   </div>
   
-</body>
-</html>
+
+
+</body></html>
