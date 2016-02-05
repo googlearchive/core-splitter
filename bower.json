@@ -2,8 +2,8 @@
   "name": "iron-splitter",
   "private": true,
   "dependencies": {
-    "polymer": "Polymer/polymer#master",
-    "iron-resizable-behavior": "PolymerElements/iron-resizable-behavior#master",
+    "polymer": "Polymer/polymer#^1.2.0",
+    "iron-resizable-behavior": "PolymerElements/iron-resizable-behavior",
     "iron-flex-layout": "PolymerElements/iron-flex-layout"
   }
 }
